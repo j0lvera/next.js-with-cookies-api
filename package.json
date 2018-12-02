@@ -1,0 +1,23 @@
+{
+  "name": "with-cookies-api",
+  "version": "1.0.0",
+  "description": "Small Express app that proxies requests to the GitHub API to simulate authorization",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "next"
+  ],
+  "author": "Juan Olvera",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "isomorphic-unfetch": "^3.0.0"
+  }
+}
