@@ -8,6 +8,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const fetch = require('isomorphic-unfetch');
 
+const port = process.env.PORT || 3000;
 const app = express();
 
 app.use(cors({
@@ -18,13 +19,13 @@ app.use(cors({
 app.use(cookieParser())
 app.use(bodyParser.json())
 
-
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
 
 // http://expressjs.com/en/starter/basic-routing.html
 app.get('/', function(request, response) {
-    console.log('Cookies: ', request.cookies);
+    response.send('<h1>Hello from Express on Now 2.0!</h1>');
+    response.end();
 });
 
 app.post('/login', function(request, response, next) {  
@@ -68,6 +69,6 @@ app.get('/profile', function(request, response, next) {
 });
 
 // listen for requests :)
-const listener = app.listen(process.env.PORT, function() {
+const listener = app.listen(port, function() {
   console.log('Your app is listening on port ' + listener.address().port);
 });
