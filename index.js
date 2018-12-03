@@ -1,4 +1,4 @@
-// server.js
+// index.js
 // where your node app starts
 
 // init project
@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const fetch = require('isomorphic-unfetch');
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 const app = express();
 
 app.use(cors({
@@ -69,6 +69,7 @@ app.get('/profile', function(request, response, next) {
 });
 
 // listen for requests :)
-const listener = app.listen(port, function() {
-  console.log('Your app is listening on port ' + listener.address().port);
+app.listen(port, error => {
+  if (error) throw error;
+  console.log(`Your app is listening on port ${port}`);
 });

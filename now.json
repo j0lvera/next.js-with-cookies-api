@@ -2,6 +2,9 @@
     "version": 2,
     "name": "with-cookie-api",
     "builds": [
-        { "src": "index.js", "use": "@now/node-server" }
+        { "src": "index.js", "use": "@now/node-server@canary" }
+    ],
+    "routes": [
+        { "src": "/.*", "dest": "/" }
     ]
 }

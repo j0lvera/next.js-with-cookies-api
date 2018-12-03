@@ -4,7 +4,7 @@
   "description": "Small Express app that proxies requests to the GitHub API to simulate authorization",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [
     "node",
