@@ -16,8 +16,8 @@ app.use(cors({
   origin: 'http://localhost:3000'
 }));
 
-app.use(cookieParser())
-app.use(bodyParser.json())
+app.use(cookieParser());
+app.use(bodyParser.json());
 
 // we've started you off with Express, 
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.
@@ -64,7 +64,15 @@ app.get('/profile', function(request, response, next) {
       error.response = response;
       next(error);
     })
-    .then(data => response.json({ data }))
+    .then(data => {
+      const newData = Object.assign(
+        {},
+        { avatarUrl: data.avatar_url }, // We need camelcase in the frontend
+        data,
+      );
+
+      response.json({ data: newData });
+    })
     .catch(error => console.error(error));
 });
 

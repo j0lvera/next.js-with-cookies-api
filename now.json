@@ -1,6 +1,7 @@
 {
     "version": 2,
     "name": "with-cookie-api",
+    "alias": "with-cookie-api.now.sh",
     "builds": [
         { "src": "index.js", "use": "@now/node-server@canary" }
     ],
